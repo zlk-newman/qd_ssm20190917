@@ -6,7 +6,20 @@
 
     <!-- ================springmvc配置自动扫描注解以及打开注解开关====================== -->
     <!--打开springmvc框架的默认配置，即使用注解的总开关-->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven conversion-service="MyConvertor"></mvc:annotation-driven>
+
+    <!-- 定义类型转换器的spring bean对象 -->
+    <!--ConversionServiceFactoryBean类用于加载所有的自定义类型转换器到springmvc的框架中进行类型转换处理-->
+    <bean id="MyConvertor"
+          class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <list>
+                <bean class="com.yuw.converter.DateTypeConverter"></bean>
+                <!-- 此处可以继续加入其它的自定义类型转换器类 -->
+            </list>
+        </property>
+    </bean>
+
 
     <!-- SpringMVC框架使用的配置注解扫描的包范围 -->
     <context:component-scan base-package="com.yuw"></context:component-scan>

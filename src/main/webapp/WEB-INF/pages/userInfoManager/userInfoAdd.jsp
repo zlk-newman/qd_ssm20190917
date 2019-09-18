@@ -53,12 +53,13 @@
                 <input type="text" class="form-control" id="useraddress" name="useraddress" placeholder="请输入地址">
             </div>
         </div>
-        <%--<div class="form-group">
+
+        <div class="form-group">
             <label class="col-sm-2 control-label">注册日期</label>
             <div class="col-sm-4">
                 <input type="date" class="form-control" id="userregdate" name="userregdate" placeholder="请选择日期">
             </div>
-        </div>--%>
+        </div>
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">

@@ -45,8 +45,21 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
     <!-- 过滤转发的路径范围 -->
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-
-
+  <!--配置处理中文过滤器-->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <!--配置过滤属性-->
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <!--配置过滤器扫描范围-->
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
   <!-- =========框架默认启动主页============ -->
   <welcome-file-list>
