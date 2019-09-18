@@ -21,4 +21,11 @@ public class UserInfoService implements IUserInfoService {
         List<UserInfoBean> lstUserInfos = userInfoM.doLogin(userInfoBean);
         return lstUserInfos;
     }
+    @Override
+    public int saveOrUpdateUserInfo(UserInfoBean userInfoBean) {
+        // 调用Dao层进行数据库数据保存和修改操作
+        int i = userInfoM.insertSelective(userInfoBean);
+        return i;
+    }
+
 }

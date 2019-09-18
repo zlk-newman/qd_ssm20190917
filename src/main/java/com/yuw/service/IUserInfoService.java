@@ -12,4 +12,12 @@ public interface IUserInfoService {
      * @return 查询结果集
      */
     public List<UserInfoBean> doLogin(UserInfoBean userInfoBean);
+    /**
+     * 保存和修改用于信息
+     *
+     * @param userInfoBean 用户参数实体类
+     * @return 操作结果
+     */
+    public int saveOrUpdateUserInfo(UserInfoBean userInfoBean);
+
 }

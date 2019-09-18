@@ -137,5 +137,19 @@ public class UserLoginControl {
             return "../../index";
         }
     }
+    /**
+     * 保存和修改用于信息
+     * @param userInfoBean 用户参数实体类
+     * @return 结果视图
+     */
+    @RequestMapping("/saveOrUpdateUserinfo")
+    public  String  saveOrUpdateUserInfo(UserInfoBean userInfoBean){
+
+        // 调用Service层进行用户信息数据保存和修改操作
+        int i = userInfoService.saveOrUpdateUserInfo(userInfoBean);
+        // 根据操作结果进行视图转发处理
+        return "userInfoManager/userInfoAddDetail";
+    }
+
 
 }
